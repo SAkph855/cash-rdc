@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOCIÉTÉ CASH - Congo Assainissement, Santé et Hygiène</title>
+    <meta name="description" content="Société CASH, sous la direction de Bijou Pena. Solutions modernes d'assainissement, nettoyage industriel, désinfection et hygiène en RDC.">
+    <style>
+        :root {
+            --noir-absolu: #000000;
+            --noir-card: #0a0a0a;
+            --or-cash: #f4c22b;
+            --bleu-cash: #0056b3;
+            --blanc: #ffffff;
+            --gris-clair: #f4f4f4;
+            --gris-texte: #b3b3b3;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif; }
+        body { background-color: var(--noir-absolu); color: var(--blanc); scroll-behavior: smooth; overflow-x: hidden; }
+
+        /* Top Bar Info */
+        .top-bar { background-color: #000000; padding: 12px 5%; display: flex; justify-content: flex-end; align-items: center; gap: 25px; border-bottom: 1px solid #111; font-size: 13px; flex-wrap: wrap; }
+        .top-link { color: var(--blanc); text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 500; }
+        .top-link span { color: var(--or-cash); }
+
+        /* Navbar Moderne sticky */
+        header { background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid var(--or-cash); }
+        .logo-box { font-size: 26px; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; }
+        .logo-box span { color: var(--or-cash); }
+        nav { display: flex; gap: 25px; }
+        nav a { color: var(--blanc); text-decoration: none; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; padding: 5px 0; }
+        nav a:hover, nav a.active { color: var(--or-cash); border-bottom: 2px solid var(--or-cash); }
+
+        /* Section Hero avec Vidéo Cinématique en Arrière-plan */
+        .hero-section { position: relative; width: 100%; min-height: 85vh; display: flex; align-items: center; padding: 0 5%; overflow: hidden; }
+        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; opacity: 0.35; pointer-events: none; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.2) 100%); z-index: 2; }
+        .hero-container { position: relative; z-index: 3; max-width: 800px; }
+        .hero-subtitle { color: var(--or-cash); font-size: 14px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; }
+        .hero-title { font-size: 54px; font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: 25px; }
+        .hero-title span { color: var(--or-cash); }
+        .hero-slogan { font-size: 32px; font-weight: bold; color: var(--blanc); font-style: italic; line-height: 1.3; margin-bottom: 30px; border-left: 5px solid var(--or-cash); padding-left: 20px; }
+        .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
+        .btn { padding: 15px 32px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; border-radius: 5px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.4s; }
+        .btn-filled { background-color: var(--or-cash); color: #000000; box-shadow: 0 4px 15px rgba(244, 194, 43, 0.3); }
+        .btn-filled:hover { background-color: #dbad20; transform: translateY(-2px); }
+        .btn-outlined { border: 2px solid var(--blanc); color: var(--blanc); }
+        .btn-outlined:hover { background-color: var(--blanc); color: #000000; transform: translateY(-2px); }
+
+        /* Bandeau d'engagements de marque */
+        .brand-commitments { background-color: var(--noir-card); padding: 25px 5%; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; border-bottom: 1px solid #151515; text-align: center; }
+        .commitment-card { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+        .commitment-card span { color: var(--or-cash); font-size: 16px; }
+
+        /* Section Corporate Direction Générale */
+        .corporate-section { padding: 90px 5%; background-color: #050505; }
+        .corporate-grid { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+        .corporate-visual { flex: 1; min-width: 320px; position: relative; }
+        .corporate-visual img { max-width: 100%; height: auto; border-radius: 12px; border-bottom: 6px solid var(--or-cash); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+        .corporate-text { flex: 1; min-width: 320px; }
+        .corp-badge { background-color: var(--bleu-cash); color: white; padding: 6px 16px; font-size: 11px; font-weight: 800; text-transform: uppercase; border-radius: 4px; display: inline-block; margin-bottom: 15px; letter-spacing: 1px; }
+        .corp-name { font-size: 42px; font-weight: 900; margin-bottom: 5px; letter-spacing: 0.5px; }
+        .corp-title { color: var(--or-cash); font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
+        .corp-pillars { display: flex; flex-direction: column; gap: 20px; }
+        .pillar-box { display: flex; gap: 20px; background: var(--noir-card); padding: 20px; border-radius: 8px; border: 1px solid #151515; border-left: 4px solid var(--or-cash); transition: 0.3s; }
+        .pillar-box:hover { border-color: var(--or-cash); transform: translateX(5px); }
+        .pillar-box-icon { font-size: 24px; color: var(--or-cash); }
+        .pillar-box-content h4 { font-size: 15px; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; letter-spacing: 0.5px; }
+        .pillar-box-content p { color: #888; font-size: 13.5px; line-height: 1.5; }
+
+        /* Section Expertise & Services */
+        .expert-section { padding: 90px 5%; background-color: var(--noir-absolu); text-align: center; }
+        .expert-section h2 { font-size: 36px; font-weight: 900; text-transform: uppercase; margin-bottom: 50px; letter-spacing: 1px; }
+        .expert-section h2::after { content: ''; display: block; width: 70px; height: 3px; background-color: var(--or-cash); margin: 15px auto 0; }
+        .expert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .expert-card { background-color: var(--noir-card); border: 1px solid #111; border-radius: 12px; overflow: hidden; transition: 0.4s; display: flex; flex-direction: column; box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        .expert-card:hover { transform: translateY(-8px); border-color: var(--or-cash); box-shadow: 0 15px 30px rgba(244, 194, 43, 0.1); }
+        .expert-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 4px solid var(--or-cash); }
+        .expert-body { padding: 30px; flex-grow: 1; text-align: left; }
+        .expert-body h3 { font-size: 18px; font-weight: 800; margin-bottom: 18px; text-transform: uppercase; color: var(--or-cash); letter-spacing: 0.5px; }
+        .expert-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+        .expert-list li { font-size: 14px; color: #a6a6a6; display: flex; align-items: center; gap: 12px; line-height: 1.4; }
+        .expert-list li::before { content: '✓'; color: var(--or-cash); font-weight: 900; }
+
+        /* Section Devis Formulaire high-end */
+        .interactive-devis { padding: 90px 5%; background-color: #050505; text-align: center; border-top: 1px solid #111; }
+        .interactive-devis h2 { font-size: 32px; font-weight: 900; text-transform: uppercase; margin-bottom: 45px; letter-spacing: 1px; }
+        .form-wrapper { max-width: 650px; margin: 0 auto; text-align: left; background-color: var(--noir-card); padding: 45px; border-radius: 12px; border: 1px solid #151515; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .input-label { display: block; margin-bottom: 8px; font-size: 12px; font-weight: 700; text-transform: uppercase; color: #888; letter-spacing: 1px; }
+        .input-field { width: 100%; padding: 14px; background-color: var(--noir-absolu); border: 1px solid #222; color: var(--blanc); border-radius: 5px; margin-bottom: 25px; font-size: 14px; transition: 0.3s; }
+        .input-field:focus { border-color: var(--or-cash); outline: none; }
+        .submit-btn { width: 100%; padding: 16px; background-color: var(--or-cash); color: #000000; border: none; font-weight: 800; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background-color: #dbad20; transform: translateY(-1px); }
+
+        /* Footer Institutionnel */
+        footer { background-color: #000000; padding: 40px 5%; text-align: center; color: #444; font-size: 13px; border-top: 1px solid #111; border-bottom: 5px solid var(--or-cash); }
+        footer p { margin-bottom: 8px; line-height: 1.6; }
+
+        @media (max-width: 992px) {
+            .hero-section { text-align: center; justify-content: center; min-height: 75vh; }
+            .hero-title { font-size: 38px; }
+            .hero-slogan { border-left: none; padding-left: 0; font-size: 24px; }
+            .hero-buttons { justify-content: center; }
+            header { flex-direction: column; gap: 20px; text-align: center; }
+            .corporate-grid { flex-direction: column; text-align: center; }
+            .pillar-box { text-align: left; }
+            .top-bar { justify-content: center; }
+        }
+    </style>
